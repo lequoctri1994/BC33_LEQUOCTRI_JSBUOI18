@@ -67,11 +67,25 @@ function ex6() {
     var local2 = +document.getElementById("second").value;
     var changeLocal = 0;
     if (local1 != local2) {
-        exArr[local1] = exArr[changeLocal];
-        exArr[local2] = exArr[local1];
-        exArr[changeLocal] = exArr[local2]; 
+        changeLocal = exArr[local1];
+        exArr[local1] = exArr[local2];
+        exArr[local2] = changeLocal; 
 
         console.log(exArr)
     }
     document.getElementById("ex6").innerHTML = exArr;
+}
+
+function ex7() {
+    for (var k = 0; k < exArr.length - 1; k++) {
+        for (var i = 0; i < exArr.length - 1; i++) {
+            if (exArr[i] > exArr[i + 1]) {
+                var temp = exArr[i];
+                exArr[i] = exArr[i + 1];
+                exArr[i + 1] = temp;
+            }
+        }
+    }
+       
+    document.getElementById("ex7").innerHTML = exArr;
 }
