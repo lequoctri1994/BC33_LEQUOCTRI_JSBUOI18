@@ -114,11 +114,15 @@ function AddArrEx9() {
 }
 
 function ex9 () {
-  var numb = ex9Arr;
-  var res = "";
-  res = numb + (Number.isInteger)
-
-  document.getElementById("ex9").innerHTML = res;
+  var totalInteger = 0;
+         for (var i = 0; i <= ex9Arr.length - 1; i++) {
+          if (Number.isInteger(ex9Arr[i]) == true) {
+            totalInteger++;
+          } else {
+            continue;
+          }
+         }
+  document.getElementById("ex9").innerHTML = totalInteger;
 }
 
 function ex10() {
